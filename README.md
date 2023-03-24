@@ -8,7 +8,7 @@ A slightly modified version of soem_ros2 that excludes warning that occurs when 
 
 #### Warning-1:
 
-#### ![image-20230324162042165](png\image-20230324162042165.png)
+#### ![image-20230324162042165](https://github.com/evencewu/SOEM_for_ROS2/blob/main/png/image-20230324162042165.png)
 
 #### resolvent：
 
