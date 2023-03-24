@@ -24,15 +24,15 @@ message(STATUS "phtread=${PTHREAD_LIB}")
 
 #### Warning-2:
 
-![image-20230324162613210](png\image-20230324162613210.png)
+![image-20230324162613210](https://github.com/evencewu/SOEM_for_ROS2/blob/main/png/image-20230324162613210.png)
 
 #### resolvent：
 
-![image-20230324164322108](png\image-20230324164322108.png)
+![image-20230324164322108](https://github.com/evencewu/SOEM_for_ROS2/blob/main/png/image-20230324164322108.png)
 
 Turn into
 
-![image-20230324164247035](png\image-20230324164247035.png)
+![image-20230324164247035](https://github.com/evencewu/SOEM_for_ROS2/blob/main/png/image-20230324164247035.png)
 
 The compiler does not seem to support nested anonymous structures in the union，so we change the anonymous structure and all the places it is used.
 
