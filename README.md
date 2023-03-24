@@ -2,7 +2,7 @@
 
 ## introduction
 
-A slightly modified version of soem_ros2 that excludes warning that occurs when colcon build is executed
+A slightly modified version of soem_ros2 that excludes warning that occurs when colcon build is executed，Original author project address：[Bitbucket](https://bitbucket.org/edhage/soem_ros2/src/master/)
 
 ## Building the package
 
