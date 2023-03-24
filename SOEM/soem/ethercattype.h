@@ -501,7 +501,7 @@ typedef struct
          uint8   b1;
          uint16  w1;
          uint16  w2;
-      };
+      }er_data;
    };
 } ec_errort;
 

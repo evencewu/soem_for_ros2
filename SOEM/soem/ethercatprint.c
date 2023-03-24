@@ -311,13 +311,13 @@ char* ecx_err2string(const ec_errort Ec)
       case EC_ERR_TYPE_EMERGENCY:
       {
          sprintf(estring, "%s EMERGENCY slave:%d error:%4.4x\n",
-                 timestr, Ec.Slave, Ec.ErrorCode);
+                 timestr, Ec.Slave, Ec.er_data.ErrorCode);
          break;
       }
       case EC_ERR_TYPE_PACKET_ERROR:
       {
          sprintf(estring, "%s PACKET slave:%d index:%4.4x.%2.2x error:%d\n",
-                 timestr, Ec.Slave, Ec.Index, Ec.SubIdx, Ec.ErrorCode);
+                 timestr, Ec.Slave, Ec.Index, Ec.SubIdx, Ec.er_data.ErrorCode);
          break;
       }
       case EC_ERR_TYPE_SDOINFO_ERROR:
@@ -329,13 +329,13 @@ char* ecx_err2string(const ec_errort Ec)
       case EC_ERR_TYPE_SOE_ERROR:
       {
          sprintf(estring, "%s SoE slave:%d IDN:%4.4x error:%4.4x %s\n",
-                 timestr, Ec.Slave, Ec.Index, (unsigned)Ec.AbortCode, ec_soeerror2string(Ec.ErrorCode));
+                 timestr, Ec.Slave, Ec.Index, (unsigned)Ec.AbortCode, ec_soeerror2string(Ec.er_data.ErrorCode));
          break;
       }
       case EC_ERR_TYPE_MBX_ERROR:
       {
          sprintf(estring, "%s MBX slave:%d error:%4.4x %s\n",
-                 timestr, Ec.Slave, Ec.ErrorCode, ec_mbxerror2string(Ec.ErrorCode));
+                 timestr, Ec.Slave, Ec.er_data.ErrorCode, ec_mbxerror2string(Ec.er_data.ErrorCode));
          break;
       }
       default:

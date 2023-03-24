@@ -227,7 +227,7 @@ void ecx_packeterror(ecx_contextt *context, uint16 Slave, uint16 Index, uint8 Su
    Ec.SubIdx = SubIdx;
    *(context->ecaterror) = TRUE;
    Ec.Etype = EC_ERR_TYPE_PACKET_ERROR;
-   Ec.ErrorCode = ErrorCode;
+   Ec.er_data.ErrorCode = ErrorCode;
    ecx_pusherror(context, &Ec);
 }
 
@@ -247,7 +247,7 @@ static void ecx_mbxerror(ecx_contextt *context, uint16 Slave,uint16 Detail)
    Ec.Index = 0;
    Ec.SubIdx = 0;
    Ec.Etype = EC_ERR_TYPE_MBX_ERROR;
-   Ec.ErrorCode = Detail;
+   Ec.er_data.ErrorCode = Detail;
    ecx_pusherror(context, &Ec);
 }
 
@@ -272,11 +272,11 @@ static void ecx_mbxemergencyerror(ecx_contextt *context, uint16 Slave,uint16 Err
    Ec.Index = 0;
    Ec.SubIdx = 0;
    Ec.Etype = EC_ERR_TYPE_EMERGENCY;
-   Ec.ErrorCode = ErrorCode;
-   Ec.ErrorReg = (uint8)ErrorReg;
-   Ec.b1 = b1;
-   Ec.w1 = w1;
-   Ec.w2 = w2;
+   Ec.er_data.ErrorCode = ErrorCode;
+   Ec.er_data.ErrorReg = (uint8)ErrorReg;
+   Ec.er_data.b1 = b1;
+   Ec.er_data.w1 = w1;
+   Ec.er_data.w2 = w2;
    ecx_pusherror(context, &Ec);
 }
 

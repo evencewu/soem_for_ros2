@@ -2,7 +2,39 @@
 
 ## introduction
 
-A slightly modified version of soem_ros2 that excludes warning that occurs when colcon build is executed，Original author project address：[Bitbucket](https://bitbucket.org/edhage/soem_ros2/src/master/)
+A slightly modified version of soem_ros2 that excludes warning that occurs when colcon build is executed，Original author project [address](https://bitbucket.org/edhage/soem_ros2/src/master/).
+
+## Fixed problem
+
+#### Warning-1:
+
+#### ![image-20230324162042165](C:\Users\evenc\AppData\Roaming\Typora\typora-user-images\image-20230324162042165.png)
+
+#### resolvent：
+
+```
+message("phtread=${PTHREAD_LIB}")
+```
+
+Turn into
+
+```
+message(STATUS "phtread=${PTHREAD_LIB}")
+```
+
+#### Warning-2:
+
+![image-20230324162613210](C:\Users\evenc\AppData\Roaming\Typora\typora-user-images\image-20230324162613210.png)
+
+#### resolvent：
+
+![image-20230324164322108](C:\Users\evenc\AppData\Roaming\Typora\typora-user-images\image-20230324164322108.png)
+
+Turn into
+
+![image-20230324164247035](C:\Users\evenc\AppData\Roaming\Typora\typora-user-images\image-20230324164247035.png)
+
+The compiler does not seem to support nested anonymous structures in the union，so we change the anonymous structure and all the places it is used.
 
 ## Building the package
 
